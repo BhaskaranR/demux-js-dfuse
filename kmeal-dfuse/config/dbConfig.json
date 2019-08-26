@@ -1,0 +1,10 @@
+{
+  "label": "localhost",
+  "host": "localhost",
+  "user": "kmeal",
+  "port": 5432,
+  "ssl": false,
+  "database": "kmeal",
+  "schema": "public",
+  "password": "Shruthi@098"
+}

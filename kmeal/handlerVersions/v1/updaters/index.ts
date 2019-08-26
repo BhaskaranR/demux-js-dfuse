@@ -2,8 +2,9 @@ import { Updater, BlockInfo } from 'demux'
 
 const setuprest: Updater = {
   apply: async (state: any, payload: any, blockInfo: BlockInfo, context: any) => {
-    console.log(blockInfo);
     console.log(payload.data);
+    // console.log(blockInfo);
+    // console.log(payload.data);
     // const { user, movename, fullname, email } = payload.data
     // const { moveid } = payload.data
 
@@ -26,7 +27,7 @@ const setuprest: Updater = {
     //   email,
     // })
   },
-  actionType: 'kmealowner12::setuprest',
+  actionType: 'kmealowner11::setuprest',
 }
 
 // const list: Updater = {
@@ -49,7 +50,7 @@ const setuprest: Updater = {
 //       islisted: true,
 //     })
 //   },
-//   actionType: 'kmealowner12::setuprest',
+//   actionType: 'kmealowner11::setuprest',
 // }
 
 // const buy: Updater = {

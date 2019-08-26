@@ -26,24 +26,27 @@ const init = async () => {
     massiveInstance,
     migrationSequences,
     {
-      validateBlockHashes: false,
+      validateBlocks: false,
       dbSchema: dbConfig.schema
     }
   );
 
   const dfuseActionReader = new DfuseActionReader({
-    startAtBlock: 50575524,
+    startAtBlock: 62163989,
     onlyIrreversible: true,
     dfuseApiKey: process.env.DFUSE_API_KEY as string,
-    query: "account:kmealowner12",
+    query: "account:kmealowner11",
     network: "kylin"
   })
 
   const actionWatcher = new BaseActionWatcher(dfuseActionReader, actionHandler, {
     logLevel: "trace"
   })
+
   actionWatcher.watch(true)
   // console.info(`Demux listening on port ${demuxConfig.endpointPort}...`)
 }
 
-init()
+init().then(() => {
+  console.log("started")
+}).catch(err => console.error(err));

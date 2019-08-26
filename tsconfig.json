@@ -8,10 +8,10 @@
     "declarationDir": "dist/types",
     "sourceMap": true,
     "outDir": "dist/lib",
-
+    "resolveJsonModule": true,
     /* Strict Type-Checking Options */
     "strict": true,
-
+    "noImplicitAny": false,
     /* Module Resolution Options */
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",

@@ -32,15 +32,9 @@
     "lint": "tslint 'src/**/*.ts'",
     "lint:specific": "tslint",
     "start": "tsc --module commonjs --watch",
+    "run:kmeal": "node -r ts-node/register kmeal/index.ts",
     "run:example": "node -r ts-node/register example/index.ts | bunyan",
     "test": "jest --coverage"
-  },
-  "husky": {
-    "hooks": {
-      "_comment": "Use --no-verify to bypass",
-      "pre-commit": "lint-staged && pretty-quick --staged",
-      "pre-push": "yarn lint"
-    }
   },
   "lint-staged": {
     "**/*.ts": [
@@ -51,6 +45,7 @@
     "@types/bunyan": "^1.8.6",
     "@types/dotenv": "^6.1.1",
     "@types/jest": "^24.0.16",
+    "@types/massive": "^5.4.3",
     "@types/node-fetch": "^2.5.0",
     "@types/ws": "^6.0.1",
     "dotenv": "^8.0.0",
@@ -87,12 +82,11 @@
     "apollo-client": "^2.6.3",
     "apollo-link-ws": "^1.0.18",
     "bunyan": "^1.8.12",
-    "demux": "5.0.2-557",
+    "demux": "git://github.com/BhaskaranR/demux-js.git#v5.0.0",
+    "demux-postgres": "git://github.com/BhaskaranR/demux-js-postgres.git#v5.2.0",
     "graphql": "^14.4.2",
     "subscriptions-transport-ws": "^0.9.16",
     "ws": "^7.1.1"
   },
-  "peerDependencies": {
-    "demux": ">=5.0.2-557"
-  }
+  "peerDependencies": {}
 }

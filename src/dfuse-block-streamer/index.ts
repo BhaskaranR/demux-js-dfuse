@@ -168,7 +168,7 @@ export class DfuseBlockStreamer {
 
     /* Insert matching actions into the current block */
     matchingActions.forEach((action: any) => {
-      const { id, account, name, authorization, data } = action
+      const { id, account, name, authorization, data, dbOps } = action
 
       this.currentBlock!.block.actions.push({
         type: `${account}::${name}`,
@@ -178,7 +178,8 @@ export class DfuseBlockStreamer {
           account,
           name,
           authorization,
-          data
+          data,
+          dbOps
         }
       })
     })
@@ -224,6 +225,12 @@ export class DfuseBlockStreamer {
                 authorization {
                   actor
                   permission
+                }
+                dbOps {
+                  newJSON {
+                    object
+                    error
+                  }
                 }
               }
             }
